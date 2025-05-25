@@ -102,7 +102,7 @@ body {
 /* STYLE DU LOGO DANS LA NAVBAR */
 /* ----------------------- */
 .logo-img {
-    height: 90px;
+    height: 60px;
     transition: transform 0.3s ease;
 }
 .logo-img:hover {
