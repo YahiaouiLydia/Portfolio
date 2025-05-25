@@ -1,0 +1,420 @@
+/* ----------------------- */
+/* STYLE GÉNÉRAL DU BODY  */
+/* ----------------------- */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: #FDFFFC;
+    margin: 0;
+    padding: 20px;
+    padding-top: 100px;
+}
+
+/* ----------------------- */
+/* RESPONSIVE POUR BODY (écran ≤ 768px) */
+/* ----------------------- */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        padding-top: 80px;
+    }
+}
+
+/* ----------------------- */
+/* COULEURS GLOBALES UTILISABLES EN CLASSE */
+/* ----------------------- */
+.text-red { color: #E71D36; }
+.text-white { color: #FDFFFC; }
+.text-orange { color: #FF9F1C; }
+.text-blue { color: #2EC4B6; }
+
+.bg-red { background-color: #E71D36; }
+.bg-orange { background-color: #FF9F1C; }
+.bg-blue { background-color: #2EC4B6; }
+
+/* ----------------------- */
+/* STYLE DES BOUTONS GÉNÉRAUX */
+/* ----------------------- */
+.boutton {
+    background-color: #2EC4B6 !important;
+    color: #000 !important;
+    border: none !important;
+    font-weight: bold;
+    text-align: center;
+}
+.boutton:hover {
+    background-color: #FF9F1C !important;
+    color: #000 !important;
+}
+
+/* ----------------------- */
+/* STYLE DES LIENS DE NAVBAR */
+/* ----------------------- */
+.nav-link:hover {
+    color: #FF9F1C !important;
+}
+.nav-link.active {
+    color: #2EC4B6 !important;
+    font-weight: bold;
+}
+
+/* ----------------------- */
+/* STYLE POUR L'ANIMATION CLIGNOTANTE */
+/* ----------------------- */
+.blink {
+    display: inline-block;
+    animation: blink 1s steps(5, start) infinite;
+    border-right: 4px solid #fff;
+    padding-right: 0.5rem;
+}
+@keyframes blink {
+    0% { border-right-color: transparent; }
+    100% { border-right-color: #fff; }
+}
+
+/* ----------------------- */
+/* TYPOGRAPHIE RESPONSIVE */
+/* ----------------------- */
+.presentation { font-size: 25pt; }
+.hi { font-size: 29pt; font-weight: bolder; }
+.code { font-size: 11pt; }
+
+@media (max-width: 600px) {
+    .presentation { font-size: 10pt; }
+    .hi { font-size: 13pt; }
+    .w-half { width: 100%; }
+}
+
+/* ----------------------- */
+/* STYLE DES LIENS DANS LES BOUTONS */
+/* ----------------------- */
+.btn-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+.btn-link:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+/* ----------------------- */
+/* STYLE DU LOGO DANS LA NAVBAR */
+/* ----------------------- */
+.logo-img {
+    height: 90px;
+    transition: transform 0.3s ease;
+}
+.logo-img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* ----------------------- */
+/* TYPOGRAPHIE CODE PERSONNALISÉE */
+/* ----------------------- */
+.code { font-family: 'Fira Code', monospace; font-size: 11pt; }
+
+/* ---------------------------- */
+/* SECTION TIMELINE: EDUCATION */
+/* ---------------------------- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background:#2EC4B6;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+/* ---------------------------- */
+/* ÉLÉMENTS DE LA TIMELINE     */
+/* ---------------------------- */
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+.timeline-item:hover {
+    transform: translateX(10px);
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 3px solid #2EC4B6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    animation: pop 1s ease infinite alternate;
+}
+.timeline-icon i {
+    color: #2EC4B6;
+    font-size: 1.2rem;
+}
+
+/* ---------------------------- */
+/* CONTENU DE CHAQUE ÉTAPE     */
+/* ---------------------------- */
+.timeline-content {
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    position: relative;
+    width: 40%;
+    max-width: 350px;
+}
+.timeline-content h3 {
+    color: #00a950;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+}
+.timeline-content p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* Couleurs spécifiques */
+.timeline-content-red {
+    border: 5px solid #E71D36;
+    margin-left: 18px;
+}
+.timeline-content-orange {
+    border: 5px solid #FF9F1C;
+    margin-left: 18px;
+}
+
+/* ---------------------------- */
+/* TIMELINE COTÉ GAUCHE / DROITE */
+/* ---------------------------- */
+.timeline-item-left .timeline-content {
+    margin-left: 4rem;
+    left: -2rem;
+}
+.timeline-item-left .timeline-content::after {
+    content: "";
+    position: absolute;
+    right: -1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 18px solid #FF9F1C;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+}
+
+.timeline-item-right .timeline-content {
+    margin-right: 4rem;
+    margin-left: auto;
+    right: -2rem;
+}
+.timeline-item-right .timeline-content::after {
+    content: "";
+    position: absolute;
+    left: -1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right: 18px solid #E71D36;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+}
+
+/* ---------------------------- */
+/* DATES POSITIONNÉES À DROITE ET GAUCHE */
+/* ---------------------------- */
+.date-right {
+    position: absolute;
+    left: 42%;  
+    top: 40%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+.date-left {
+    position: absolute;
+    right: 42%;  
+    top: 40%;
+    transform: translateX(50%);
+    margin: 0;
+}
+
+/* ---------------------------- */
+/* TIMELINE RESPONSIVE (≤ 768px) */
+/* ---------------------------- */
+@media (max-width: 768px) {
+    .line {
+        left: 1.5rem;
+        transform: none;
+    }
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .timeline-icon {
+        left: 1.5rem;
+        top: 2rem;
+        transform: translate(-50%, -50%);
+    }
+    .timeline-item-left .timeline-content,
+    .timeline-item-right .timeline-content {
+        margin-left: 3.5rem;
+        margin-right: 1rem;
+        width: calc(100% - 4.5rem);
+        max-width: none;
+        left: 0;
+        right: 0;
+    }
+    .timeline-item-left .timeline-content::after {
+        left: -1.2rem;
+        right: auto;
+        border-right: 18px solid  #FF9F1C;
+        border-left: none;
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent;
+    }
+    .timeline-item h3.date-left,
+    .timeline-item h3.date-right {
+        position: static;
+        transform: none;
+        margin-left: 3.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* ---------------------------- */
+/* ANIMATIONS GÉNÉRALES        */
+/* ---------------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.bounce-icon {
+    animation: bounce 1.5s infinite;
+}
+
+
+/* Footer */
+.footer {
+    /* background: linear-gradient(180deg, #212529 0%, #1E1E1E 100%); */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+.glass-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #E71D36, #2EC4B6, #FF9F1C, transparent);
+    animation: slideBorder 4s linear infinite;
+}
+@keyframes slideBorder {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.social-icon {
+    color: #FF9F1C;
+    transition: all 0.3s ease;
+}
+.social-icon:hover {
+    color: #E71D36 !important;
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 10px #2EC4B6);
+    animation: bounce 0.5s ease;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.orbitron {
+    font-family: 'Orbitron', sans-serif;
+    color: #FDFFFC;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .glass-container {
+        padding: 15px;
+    }
+    .social-icon {
+        font-size: 1.5rem !important;
+    }
+}
+
+
+/* SKILLS */
+
+   .skill-card {
+            height: 320px; /* Ajuste cette hauteur si besoin */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+        }
+
+
+
+        @media (max-width: 768px) {
+   .skill-card {
+            height: 270px; /* Ajuste cette hauteur si besoin */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+        }
+}
